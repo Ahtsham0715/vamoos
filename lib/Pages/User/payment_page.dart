@@ -76,7 +76,6 @@ class PaymentPage extends StatelessWidget {
     );
   }
 }
-//payment page
 
 class PaymentOptionCard extends StatelessWidget {
   final String optionTitle;
