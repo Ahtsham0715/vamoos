@@ -43,9 +43,9 @@ class _LoginPageState extends State<LoginPage> {
           .collection('user')
           .doc(usercredential.user!.uid)
           .get()
-          .then((DocumentSnapshot doc) {
+          .then((DocumentSnapshot doc) async {
         if (doc.exists) {
-          box.put(usercredential.user!.uid.toString(), {
+          await box.put(usercredential.user!.uid.toString(), {
             'isHost': doc['utype'],
             'data': doc.data(),
           });

@@ -28,9 +28,9 @@ class _NavigationHomeScreenState extends State {
   Box box = Hive.box('userData');
   @override
   void initState() {
-    ishost =
-        box.get(FirebaseAuth.instance.currentUser!.uid.toString())['isHost'] ??
-            false;
+    var val = box.get(FirebaseAuth.instance.currentUser!.uid.toString());
+    log(val['isHost'].toString());
+    ishost = val['isHost'] ?? false;
     drawerIndex = DrawerIndex.HOME;
     screenView = ishost ? const HostPage() : const UserHomePage();
     super.initState();
